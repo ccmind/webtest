@@ -1,0 +1,155 @@
+/*定义变量*/
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+@font-size: 18px;
+#header {
+  color: @light-blue;
+  font-size: @font-size;
+}
+
+/*运算*/
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+#header2 {
+    color: #888 / 4;//#@222
+    background-color: @nice-blue + #111;
+    height: 100% / 2 + @filler;//50%+10%
+    width: @other;
+}
+
+/*函数*/
+@height: 0.5;
+@size: 10px+10;
+@color: #666 + 111;
+#header2 {
+    color: @color;
+    height: percentage(@height);//0.5->50%
+    font-size: saturate(@size,10%);//增加10%饱和度
+    background-color: spin(lighten(@color, 25%), 10);//颜色亮度降低25%,并且色相值增加10 
+}
+
+
+.cat(@size) when (@size <= 19) and (@size >=13) {
+    height: @size * 10px;
+}
+// smallCat
+.cat(@size) when (@size <13) {
+    height: @size * 5px;
+}
+// wssCat
+.cat(@size) when (default()) {
+    height: 666px;
+}
+.smallCat {
+    .cat(10);
+}
+.bigCat {
+    .cat(18);
+}
+.wssCat {
+	.cat(26);
+}
+
+/*混合*/
+.my-mixin {
+  color: black;
+}
+.my-other-mixin() {
+  background: white;
+}
+.my-font-mixin {
+  font-size: 20px;
+}
+
+.cat, #wscat{
+    background-color: aquamarine;
+}
+#header3 {
+  .my-mixin;
+  .my-other-mixin;//可以省略括号
+  //.my-other-mixin()//当然也可以这样
+  .my-font-mixin();
+  #wscat;
+  //.cat()//上下两种方法都可以
+}
+
+/*嵌套规则*/
+#header4 {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+  &:before{
+      content: "你好";
+  }
+  &-wsscat{
+      background-color: bisque;
+  }
+}
+
+/*作用域*/
+@var: white;
+#header5 {
+  @var: red;
+  #logo {
+    color: @var; // red
+  }
+}
+
+/*选择器*/
+@bg: background;
+.@{bg} {
+    background-color: black;
+}
+
+/*带参数的Mixin（混入）*/
+.bg(@color:#555555, @size:16px) {
+    background-color: @color;
+    font-size: @size;
+}
+.background{
+    .bg
+}
+
+.bg(@color, @size) {
+    background-color: @color;
+    font-size: @size;
+}
+.background{
+    .bg(#555555,16px)
+}
+
+/*命名空间*/
+#wsscat{
+    @bg:#000000;
+    @width:100px;
+    .home{
+        background-color: @bg;
+    }
+
+    .logo{
+        width:@width;
+        &:hover{
+            color: #7FFFD4+@bg;
+        }
+    }
+}
+
+#wsa{
+    .home{
+        #wsscat > .home;
+    }
+    .logo {
+        #wsscat > .logo
+    }
+}
+
+/*导入*/
+//less样式文件可以用@import '文件路径'来引入我们外面写好的另一份less文件
+//@import 'styles.less';
+//如果我们不带扩展名或者带非.less的扩展名编译的时候都会被认为是less文件
+//@import 'styles';

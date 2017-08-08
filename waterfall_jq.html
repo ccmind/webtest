@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src= "jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+		* {
+			margin:0px;
+			padding:0px;
+		}
+		.box{
+			padding:10px 0 0 15px;
+			float:left;
+		}
+		.pic  {
+			padding:10px;
+			border:1px solid #ccc;
+			box-shadow: 0 0 5px #ccc;
+			-webkit-box-shadow: 0 0 5px #ccc;
+			-moz-box-shadow:0 0 5px #ccc;
+		}
+		.pic img {
+			width:200px;
+			height:auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="main" style="position: relative;">
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/1.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/2.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/3.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/4.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/5.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/6.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/1.jpg">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="imgs/2.jpg">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(window).on('load',function(){
+			waterfall();
+			var imgs = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+			$(window).on('scroll',function() {
+				if(checkScroll) {
+					$.each(imgs,function(index,value) {
+						var obox = $('<div>').addClass('box').appendTo($("#main"));
+						var opic = $('<div>').addClass('pic').appendTo($(obox));
+						$('<img>').attr('src','imgs/' + value).appendTo($(opic));
+					})
+					waterfall();
+				}
+			})
+		})
+		function checkScroll() {
+			var lastBox = $("#main>div").last();
+			var boxH = $(lastBox).offset().top + Math.floor($(lastBox).outerHeight()/2);
+			console.log(boxH);
+			var scrolltop = $(window).scrollTop();
+			return (boxH<(scrolltop+$(window).height()))?true:false;
+		}
+		function waterfall() {
+			var $boxs = $("#main>div");
+			var oboxW = $boxs.eq(0).outerWidth();
+			var cols = Math.floor($(window).width()/oboxW);
+			$("#main").width(oboxW*cols).css('margin','0 auto');
+			
+			var hArr = [];
+			$boxs.each(function(index,ele){
+				var h = $boxs.eq(index).outerHeight();
+				if(index<cols) {
+					hArr[index] = h;
+				} else {
+					var minh = Math.min.apply(null,hArr);
+					var minIndex = $.inArray(minh,hArr);
+					$(ele).css({
+						"position":'absolute',
+						"left":oboxW*minIndex + "px" ,
+						"top":minh + "px"
+					});
+					hArr[minIndex] += h;
+				}
+			})
+			
+		}
+	</script>
+</body>
+</html>

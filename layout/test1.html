@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<style type="text/css">
+		body,.main{
+			width:100%;
+			height:100%;
+		}
+		.top {
+			background-color:#f3f3f3;
+		
+		}
+		.top2 {
+			width:100%;
+			background-color:#f8f8f8;
+		}
+		.top3 {
+			margin-top:200px;
+			background-color:grey;
+			height:200px;
+		}
+		.top2 ul li {
+			float:left;
+		}
+		.top4 {
+			width:100%;
+			height:100px;
+			background:pink;
+		}
+		.top5 {
+			width:100%;
+			height:100px;
+			background:purple;
+		}
+
+		.column{float:left;width:25%;padding-left:20px;box-sizing:border-box;}
+	</style>
+</head>
+<body>
+	<div class="main">
+		
+		<div class="top">
+			<!-- 水平居中 -->
+			<div style="width:300px;margin:0 auto;background-color:red;">margin:0 auto;</div>
+			<div style="text-align:center;">text align</div>
+			<div style="display: table; margin: 0 auto;">table 水平居中</div>
+			<div style="position:relative;">
+				<div style="position:absolute; left:50%; transform:translate(-50%);">绝对定位  可以吗？</div>
+			</div>
+			<div style="display:flex;justify-content:center;margin-top:20px;">flex 布局 1</div>
+			<div style="display:flex">
+				<div style="margin:0 auto;">flex 布局 2</div>
+			</div>
+		</div>
+		<div class="top2">
+			<ul>
+			<!-- 垂直居中 -->
+				<li><div style="display:table-cell;vertical-align:middle;height:200px;background-color: blue;">table-cell垂直居中1</div></li>
+				<li><div style="display:inline-block;vertical-align:middle;line-height:200px;background-color: red;">inline-block垂直居中2</div></li>
+				<li>
+					<div style="postion:relative;background-color:black;height:200px;">
+						<div style="positon:absolute;top:50%; transform:translate(0,-50%);">绝对定位居中</div>
+					</div>
+				</li>
+				<li>
+					<div style="display:flex; align-items:center;height:200px;">flex垂直居中</div>
+				</li>
+			</ul>
+		</div>
+		<div class="top3">
+			<!-- 水平垂直居中 -->
+			<div style="display:table-cell; vertical-align:middle; text-align:center;width:300px;height:inherit;background:yellow;float:left;">
+				<div style="display:inline-block;">水平垂直居中</div>
+			</div>
+			<div style="width:300px;height:inherit;display:flex;justify-content:center;align-items:center;float:left;">flex水平垂直居中</div>
+		</div>
+		<div class="top4">
+			<div style="float:left;width:200px;background:white;height:100%;">left</div>
+			<div style="margin-left:200px;background:black;height:100%;color:#fff">right</div>
+		</div>
+		<div class="top5">
+		    <div styl="float:left;width:200px;">aaa</div>
+		    <div style="width:100%;margin-left:-200px;float:right">
+		        <div style="max-resolution: res;in-left:200px;">right</div>
+		    </div>
+		</div>
+		<div class="top5" style="background:white;">
+		    <div style="float:left;width:200px;">left</div>
+		    <div style="overflow:hidden;">right</div>
+		</div>
+		<div class="top5" style="display:flex;">
+		    <div style="width:200px;">left</div>
+		    <div style="flex: 1;background-color:#fff;">right</div>
+		</div>
+		<div class="top5" style="background:white;">
+		    <div style="float:left;width:200px;">left</div>
+		    <div style="width:100%;">center</div>
+		    <div style="width:200px;float:right">right</div>
+		</div>
+		<div class="top5" style="display:table;table-layout: fixed;">
+		    <div style="width:200px;display:table-cell;">left</div>
+		    <div style="width:100%;display:table-cell;">center</div>
+		    <div style="width:200px;display:table-cell;">right</div>
+		</div>
+		<div class="top5" style="display:flex;background:#fff">
+		    <div style="width:200px;">left</div>
+		    <div style="width:100%;flex:1">center</div>
+		    <div style="width:200px;">right</div>
+		</div>
+		<div class="top5" style="display:flex;">
+		    <div>left</div>
+		    <div style="flex:1">center</div>
+		</div>
+		<div class="top5" style="background:#fff;margin-left:-20px;">
+		    <div class="column">1</div>
+		    <div class="column">1</div>
+		    <div class="column">1</div>
+		    <div class="column">1</div>
+		</div>
+		<div class="top5" style="dispaly:table;table-layout:fixed;width:100%;">
+		    <div style="display:table-cell;padding-left:20px;">1</div>
+		    <div style="display:table-cell;padding-left:20px;">1</div>
+		    <div style="display:table-cell;padding-left:20px;">1</div>
+		    <div style="display:table-cell;padding-left:20px;">1</div>
+		</div>
+
+		<div class="top5" style="background-color:#fff;">
+		    <div class="parent">
+        <div class="row"><div class="item"></div><div class="item"></div><div class="item"></div></div>
+        <div class="row"><div class="item"></div><div class="item"></div><div class="item"></div></div>
+        <div class="row"><div class="item"></div><div class="item"></div><div class="item"></div></div>
+    </div>
+		</div>
+	</div>
+</body>
+</html>
