@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div,ul {
+			margin:0px;
+			padding:0px;
+		}
+		#scrolldiv {
+			width:300px;
+			height:200px;
+			box-sizing: border-box;		
+			border:3px solid red;
+			overflow: hidden;
+		}
+		#scrolldiv ul{
+			list-style: none;
+			width:100%;
+			height:100%;
+		}
+		#scrolldiv ul li {
+			line-height: 22px;
+			text-align:center;
+		}
+	</style>
+
+</head>
+
+<body>
+<div id="scrolldiv">
+	<ul>
+		<li>1111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+		<li>5555</li>
+		<li>6666</li>
+		<li>7777</li>
+		<li>8888</li>
+		<li>9999</li>
+	</ul>
+</div>
+<div>
+	<marquee onmouseover = "this.stop()" onmouseout = "this.start()" loop="3">"3" yao gun dong ...</marquee>
+</div>
+<script type="text/javascript">
+		
+		var scrollcont = document.getElementById('scrolldiv');
+		scrollcont.innerHTML += scrollcont.innerHTML;
+
+		var liHeight = 22;
+		scrollcont.scrolltop = 0;
+		var time;
+		function startMove() {
+			scrollcont.scrollTop ++;
+			time = setInterval('scrollup()',50);
+		}
+		function scrollup() {
+			if(scrollcont.scrollTop % liHeight == 0) {
+				clearInterval(time);
+				setTimeout("startMove()",2000)
+			} else {
+				scrollcont.scrollTop ++;
+				if(scrollcont.scrollTop >= scrollcont.scrollHeight/2){
+					scrollcont.scrollTop = 0;
+				}
+			}
+		}
+		
+		startMove();
+
+
+	</script>
+</body>
+</html>
