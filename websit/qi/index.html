@@ -1,148 +1,191 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>企业网站</title>
+    <meta charset="utf-8">
+    <title>企业网站</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+    }
 
-	<style type="text/css">
-		*{
-			margin:0;
-			padding:0;
-			font-size:12px;
-		}
-		body{
-			background-color: #F5f5f5;
-		}
-		.top {
-			width:100%;
-			height:27px;
-			border-bottom:1px solid grey;
-		}
-		.top_content {
-			width:1000px;
-			margin:0 auto;
-		}
-		.top_content li {
-			list-style:none;
-			float:right;
-			width:70px;
-			line-height:27px;
-		}
+    body {
+        background-color: #F5f5f5;
+    }
 
-		.top_content li a:link,.top_content li a:visited{
-			color:grey;
-			text-decoration-line: none;
-		}
+    .top {
+        width: 100%;
+        height: 27px;
+        border-bottom: 1px solid grey;
+    }
 
-		.top_content li a:hover,.top_content li a:active{
-			color:red;
-		}
-		.wrap {
-			width:1000px;
-			margin:0 auto;
-		}
-		.logo {
-			height:80px;
-			background-color: #fff;
-		}
-		.logo_left {
-			width:120px;
-			height:80px;
-			float:left;
-			background-color: red;
-		}
-		.logo_right {
-			
-			float:right;
-			height:80px;
-			line-height:80px;
-			margin-right:10px;
-		}
+    .top_content {
+        width: 1000px;
+        margin: 0 auto;
+    }
 
-		.nav {
-			height:40px;
-			background-color: grey;
-		}
-		.nav_left {
-			width:10px;
-			float:left;
-			height:40px;
-		}
-		.nav_mid {
-			width:980px;
-			float:left;
-		}
-		.nav_right {
-			width:10px;
-			float:left;
-			height:40px;
+    .top_content li {
+        list-style: none;
+        float: right;
+        width: 70px;
+        line-height: 27px;
+    }
 
-		}
-		.nav_mid_left ul li {
-			list-style: none;
-			float:left;
-			width:100px;
-			height:40px;
-			line-height:40px;
-		}
-		
-		.nav_mid_left ul li a:link,.nav_mid_left ul li a:visited{
-			color:#fff;
-			text-decoration-line: none;
-		}
+    .top_content li a:link,
+    .top_content li a:visited {
+        color: grey;
+        text-decoration-line: none;
+    }
+
+    .top_content li a:hover,
+    .top_content li a:active {
+        color: red;
+    }
+
+    .wrap {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        height: 80px;
+        background-color: #fff;
+    }
+
+    .logo_left {
+        width: 120px;
+        height: 80px;
+        float: left;
+        background-color: red;
+    }
+
+    .logo_right {
+
+        float: right;
+        height: 80px;
+        line-height: 80px;
+        margin-right: 10px;
+    }
+
+    .nav {
+        height: 40px;
+        background-color: grey;
+    }
+
+    #myFocus {
+		height:400px;
+		width:1000px;
+    }
+
+    .nav_left {
+        width: 10px;
+        float: left;
+        height: 40px;
+    }
+
+    .nav_mid {
+        width: 980px;
+        float: left;
+    }
+
+    .nav_right {
+        width: 10px;
+        float: left;
+        height: 40px;
+    }
+
+    .nav_mid_left ul li {
+        list-style: none;
+        float: left;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .nav_mid_left ul li a:link,
+    .nav_mid_left ul li a:visited {
+        color: #fff;
+        text-decoration-line: none;
+    }
 
 
-		.nav_mid_left ul li a:hover, .nav_mid_left ul li a:active{
-			color:yellow;
-		}
+    .nav_mid_left ul li a:hover,
+    .nav_mid_left ul li a:active {
+        color: yellow;
+    }
 
 
-		.nav_mid_right {
-			height:40px;
-			line-height: 40px;
-			vertical-align: center;
-		}
-	</style>
+    .nav_mid_right {
+        height: 40px;
+        line-height: 40px;
+        vertical-align: center;
+    }
+    </style>
 </head>
+
 <body>
-	<div class="top">
-		<div class="top_content">
-			<ul>
-				<li><a href="#">联系我们</a></li>
-				<li><a href="#">加入收藏</a></li>
-				<li><a href="#">设为首页</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="top">
+        <div class="top_content">
+            <ul>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">加入收藏</a></li>
+                <li><a href="#">设为首页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="logo">
+            <div class="logo_left"></div>
+            <div class="logo_right">24小时服务热线：88888</div>
+        </div>
+        <div class="nav">
+            <div class="nav_left"></div>
+            <div class="nav_mid">
+                <div class="nav_mid_left">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单一</a></li>
+                    </ul>
+                </div>
+                <div class="nav_mid_right">
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="nav_right"></div>
+        </div>
 
-	<div class="wrap">
-		<div class="logo">
-			<div class="logo_left"></div>
-			<div class="logo_right">24小时服务热线：88888</div>
-		</div>
+        <div id="myFocus">
+            <!--焦点图盒子-->
+            <div class="loading"><img src="myfocus/img/loading.gif" alt="请稍候..." /></div>
+            <!--载入画面(可删除)-->
+            <div class="pic">
+                <!--图片列表-->
+                <ul>
+                    <li><a href="#1"><img src="myfocus/img/1a.jpg" thumb="" alt="图片1来源于网络，版权属于作者" text="图片1更详细的描述文字" /></a></li>
+                    <li><a href="#2"><img src="myfocus/img/2a.jpg" thumb="" alt="版权属于作者，图片2来源于网络" text="图片2更详细的描述文字" /></a></li>
+                    <li><a href="#3"><img src="myfocus/img/3a.jpg" thumb="" alt="图片3来源于网络，版权属于作者" text="图片3更详细的描述文字" /></a></li>
+                    <li><a href="#4"><img src="myfocus/img/4a.jpg" thumb="" alt="版权属于作者，图片4来源于网络" text="图片4更详细的描述文字" /></a></li>
+                    <li><a href="#5"><img src="myfocus/img/5a.jpg" thumb="" alt="图片5来源于网络，版权属于作者" text="图片5更详细的描述文字" /></a></li>
+                </ul>
+            </div>
+        </div>
 
-		<div class="nav">
-			<div class="nav_left"></div>
-			<div class="nav_mid">
-				<div class="nav_mid_left">
-					<ul>
-						<li><a href="#">首页</a></li>
-						<li><a href="#">菜单一</a></li>
-						<li><a href="#">菜单一</a></li>
-						<li><a href="#">菜单一</a></li>
-						<li><a href="#">菜单一</a></li>
-						<li><a href="#">菜单一</a></li>
-						<li><a href="#">菜单一</a></li>
-					</ul>
-				</div>
-				<div class="nav_mid_right">
-					<input type="text"/>
-				</div>
-			</div>
-			<div class="nav_right"></div>
-		</div>
-
-		
-	</div>
+    </div>
+    <script type="text/javascript" src="myfocus/js/myfocus-2.0.1.min.js"></script>
+    <script type="text/javascript">
+    //设置
+    myFocus.set({
+        id: 'myFocus', //ID
+        pattern: 'mF_fancy' //风格
+    });
+    </script>
 </body>
+
 </html>
