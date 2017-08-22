@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			background-color:#332e2e;
+			margin:0;
+			padding:0;
+		}
+		a {
+			text-decoration: none;
+			color:#fff;
+		}
+
+		.menu {
+			width:1000px;
+			margin:0 auto;
+			
+		}
+		.menu li {
+			float:left;
+			width:25%;
+			list-style: none;
+			background-color:grey;
+			height:50px;
+			line-height:50px;
+			text-align: center;
+			cursor:pointer;
+			position: relative;
+		} 
+		.menu li a {
+			padding:15px 25px;
+		}
+		.menu li a:hover {
+			
+			/*border-bottom:3px solid yellow;*/
+		}
+		.menu .active {
+			border-bottom:3px solid #f05323;
+			transition: all .2s;
+			
+		}
+		.menu li:hover:after {
+			opacity: 1;
+			position: absolute;
+		    top: 102%;
+		    left: 50%;
+		    margin-left: -10px;
+		    
+		    content: "";
+		    height: 0;
+		    width: 0;
+		    
+		    pointer-events: none;
+		    /*border-color: rgba(240, 83, 35, 0);*/
+		    border: solid transparent;
+		    border-top-color: #f05323;
+		    border-width: 10px;
+		    transition: .2s all ease-in-out;
+		}
+	</style>
+</head> 
+<body>
+	<ul class="menu">
+		<li class="active"><a href="#">MENU1</a></li>
+		<li><a href="#">MENU2</a></li>
+		<li><a href="#">MENU3</a></li>
+		<li><a href="#">MENU4</a></li>
+	</ul>
+</body>
+</html>
