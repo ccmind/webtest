@@ -239,7 +239,7 @@ $(document).ready(function() {
         if(Global.section_num == 5){
             $('html,body').animate({scrollTop: 0}, 1000,function(){
                 Global.section_num =1
-             }); 
+            }); 
         }else{
             if (!Global.isScrolling) {
                 Global.isScrolling = true;
